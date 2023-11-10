@@ -29,12 +29,12 @@ def recognize_whisper_api(
         raise SetupError("Set environment variable ``OPENAI_API_KEY``")
 
     try:
-        from openai import OpenAi
+        from openai import OpenAI
     except ImportError:
         raise SetupError(
             "missing openai module: ensure that openai is set up correctly."
         )
-    openai = OpenAi(
+    openai = OpenAI(
         api_key=api_key if api_key is not None else os.environ.get("OPENAI_API_KEY")
     )
 
